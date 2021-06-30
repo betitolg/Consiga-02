@@ -1,15 +1,15 @@
-*{
+/**{
 
   border: solid red 1px;
 
-}
+}*/
 
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 15vmin;
   pointer-events: none;
 }
 
