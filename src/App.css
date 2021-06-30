@@ -1,3 +1,9 @@
+*{
+
+  border: solid red 1px;
+
+}
+
 .App {
   text-align: center;
 }
