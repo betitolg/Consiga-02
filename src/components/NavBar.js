@@ -3,7 +3,14 @@ import react from "react";
 export default function NavBar() {
   return (
     <div className="tx_container">
-      <h1>Soy el Nav Bar</h1>
+      <ul>
+
+        <li>menu 1</li>
+        <li>menu 2</li>--
+        <li>menu 3</li>
+        <li>menu 4 </li>
+        <li>menu 4 </li>
+      </ul>
     </div>
   );
 }
