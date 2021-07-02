@@ -1,10 +1,14 @@
-import react from "react";
+import { Jumbotron } from 'react-bootstrap';
 
 export default function Text() {
   return (
-    <div className="tx_container">
-      <h1>Soy el componente Text</h1>
-    </div>
+    <Jumbotron>
+      <h1>Hola Bienvenido</h1>
+      <p>
+        Puedes consultar nuestros productos:
+      </p>
+    </Jumbotron>
+   
   );
 }
 
