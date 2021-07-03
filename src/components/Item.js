@@ -2,7 +2,7 @@ import { Card,Button } from 'react-bootstrap';
 import React from 'react'
 
     export default function Item(props) {
-        console.log(props);
+       
         return (
             
             <Card style={{ width: '18rem' }}>
