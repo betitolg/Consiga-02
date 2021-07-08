@@ -1,6 +1,6 @@
 import { Card,Button } from 'react-bootstrap';
 import React from 'react'
-
+import ItemCount from './ItemCount';
     export default function Item(props) {
        
         return (
@@ -12,7 +12,10 @@ import React from 'react'
               <Card.Text>
                {props.descripcion}
               </Card.Text>
-              <Button variant="primary">Consultar Producto</Button>
+              <Card.Text>
+               <ItemCount stock={props.stock} initial='1'/>
+              </Card.Text>
+              <Button variant="primary">Agregar al Carrito</Button>
             </Card.Body>
           </Card>
         )
