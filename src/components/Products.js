@@ -1,72 +1,43 @@
+import React, { useState, useEffect } from "react";
+import Item from "./Item";
+import { CardDeck } from "react-bootstrap";
 
-import React, { Component } from 'react'
-import Item from './Item'
-import { CardDeck } from 'react-bootstrap';
-export default class Products extends Component {
+export default function Products() {
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
 
-
-    constructor(props) {
-        super(props);
-
-        this.productos = [
-            {
-                id: 1,
-                title: "Cebolla",
-                description: "Cebolla x Kg",
-                img: "https://supermercadosronald.vteximg.com.br/arquivos/ids/156300-1000-1000/cebolla-paiteña-kg-002022.jpg?v=637476186286230000",
-                stock: 5
-            },
-            {
-                id: 2,
-                title: "Papa",
-                description: "Papa x Kg",
-                img: "https://supermercadosronald.vteximg.com.br/arquivos/ids/158185-1000-1000/Papa-Chaucha-Kg-2027.jpg?v=637607495734400000",
-                stock:10
-            },
-            {
-                id: 3,
-                title: "Ajo",
-                description: "Ajo x Kg",
-                img: "https://supermercadosronald.vteximg.com.br/arquivos/ids/158179-1000-1000/Ajo-Kg-2002.jpg?v=637607484758770000",
-                stock:3
-            },
-            {
-                id: 4,
-                title: "Coliflor",
-                description: "Coliflor x Unidad",
-                img: "https://supermercadosronald.vteximg.com.br/arquivos/ids/158184-1000-1000/Coliflor-Kg-2031.jpg?v=637607494555830000",
-                stock:20
-            }
-
-        ]
-    }
-
-
-
-    render() {
-
-        const mapFunctionComponent = () => {
-            let ConjuntoDeComponentesFuncionales = []
-
-            for (let index of this.productos) {
-                let NuevocomponenteFuncional = <Item
-                    titulo={index.title}
-                    descripcion={index.description}
-                    img={index.img}
-                    stock={index.stock}
-                />
-
-                ConjuntoDeComponentesFuncionales = [...ConjuntoDeComponentesFuncionales, NuevocomponenteFuncional]
-
-            }
-
-            return ConjuntoDeComponentesFuncionales
+  useEffect(() => {
+    fetch("https://productsrestservice.azurewebsites.net/api/product")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setIsLoaded(true);
+          setItems(result);
+        },
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
         }
+      );
+  }, []);
 
-        return (
-            <CardDeck>
-                {mapFunctionComponent()}
-            </CardDeck>
-        );
-    }
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  } else if (!isLoaded) {
+    return <div>Cargando...</div>;
+  } else {
+    return (
+      <CardDeck>
+        {items.map((item) => (
+          <Item
+            titulo={item.name}
+            descripcion={item.description}
+            img={item.img}
+            stock={item.stock}
+          />
+        ))}
+      </CardDeck>
+    );
+  }
 }

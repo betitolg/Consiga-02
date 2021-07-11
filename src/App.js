@@ -13,7 +13,7 @@ function App() {
 
     <div className='container'>
       <NavBar />
-      <br />
+      <br/>
       <ItemListContainer greetings='Daniel'/>
       <Products />
     </div>
