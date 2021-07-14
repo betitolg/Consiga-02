@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Spinner } from "react-bootstrap";
 import ItemCount from "./ItemCount";
 
 export default function ItemDetail(props) {
@@ -25,15 +25,17 @@ export default function ItemDetail(props) {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Cargando...</div>;
+    return <Spinner animation="grow" variant="dark" />;
   } else {
     return (
       <Card className="text-center">
         <Card.Header>Consulta Producto : {items.name}</Card.Header>
         <Card.Body>
-        <Card.Img variant="top" src={items.img} />
+          <Card.Img variant="top" src={items.img} />
           <Card.Title>{items.name}</Card.Title>
           <Card.Text>{items.description} </Card.Text>
+
+          <div style={{ color: "red" }}> Precio: $ {items.price}</div>
           <Button variant="primary">Comprar</Button>
         </Card.Body>
         <Card.Footer className="text-muted">

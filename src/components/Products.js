@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
-import { CardDeck } from "react-bootstrap";
+import { CardDeck , Spinner} from "react-bootstrap";
 
 export default function Products() {
   const [error, setError] = useState(null);
@@ -25,7 +25,7 @@ export default function Products() {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Cargando...</div>;
+    return <Spinner animation="grow" variant="dark" />;
   } else {
     return (
       <CardDeck>

@@ -1,24 +1,18 @@
+import "./App.css";
+import ItemDetail from "./components/ItemDetail";
+import ItemListContainer from "./components/ItemListContainer";
 
-import './App.css';
-import ItemDetail from './components/ItemDetail';
-import ItemListContainer from './components/ItemListContainer'
-
-import NavBar from './components/NavBar';
-import Products from './components/Products';
+import NavBar from "./components/NavBar";
+import Products from "./components/Products";
 function App() {
-
-
-
-
   return (
-
-    <div className='container'>
+    <div className="container">
       <NavBar />
-      <br/>
-      <ItemListContainer greetings='Daniel'/>
+      <br />
+      <ItemListContainer greetings="Daniel" />
       <Products />
-<br/>
-      <ItemDetail/>
+      <br />
+      <ItemDetail />
     </div>
   );
 }
