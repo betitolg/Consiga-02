@@ -15,6 +15,7 @@ import ItemCount from './ItemCount';
               <Card.Text>
                <ItemCount stock={props.stock} initial='1'/>
               </Card.Text>
+              <div style={{ color: "red" }}> Precio: $ {props.price}</div>
               <Button variant="primary">Agregar al Carrito</Button>
             </Card.Body>
           </Card>

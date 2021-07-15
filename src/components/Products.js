@@ -35,6 +35,7 @@ export default function Products() {
             descripcion={item.description}
             img={item.img}
             stock={item.stock}
+            price = {item.price}
           />
         ))}
       </CardDeck>
