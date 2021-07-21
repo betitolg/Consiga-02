@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Card, Button, Spinner } from "react-bootstrap";
 import ItemCount from "./ItemCount";
+import { useParams } from "react-router-dom";
 
-export default function ItemDetailContainer(props) {
+export default function ItemDetailContainer() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
-    fetch("https://productsrestservice.azurewebsites.net/api/product/3")
+    console.log(id);
+    fetch("https://productsrestservice.azurewebsites.net/api/product/" + id)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -20,7 +23,7 @@ export default function ItemDetailContainer(props) {
           setError(error);
         }
       );
-  }, []);
+  }, [id]);
 
   if (error) {
     return <div>Error: {error.message}</div>;

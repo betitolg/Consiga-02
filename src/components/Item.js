@@ -1,8 +1,11 @@
 import { Card, Button } from "react-bootstrap";
 import React from "react";
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
+
 export default function Item(props) {
   return (
+    <Link to={"/item/"+props.id}>
     <Card style={{ width: "18rem" }}>
       <Card.Img variant="top" src={props.img} />
       <Card.Body>
@@ -15,5 +18,6 @@ export default function Item(props) {
         <Button variant="primary">Agregar al Carrito</Button>
       </Card.Body>
     </Card>
+    </Link>
   );
 }

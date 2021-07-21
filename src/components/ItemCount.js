@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+
 export default function ItemCount(props) {
   const [count, moreCount] = useState(props.initial);
 
   const AddProduct = () => {
-    var integer = parseInt(count, 10);
-
     if (count < props.stock) {
       moreCount(count + 1);
     }
   };
   const RemoveProduct = () => {
-    var integer = parseInt(count, 10);
     if (count !== 1) {
       moreCount(count - 1);
     }
