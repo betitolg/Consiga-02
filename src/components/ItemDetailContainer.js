@@ -39,7 +39,7 @@ export default function ItemDetailContainer(props) {
           <Button variant="primary">Comprar</Button>
         </Card.Body>
         <Card.Footer className="text-muted">
-          <ItemCount stock={items.stock} initial="1" />
+          <ItemCount stock={items.stock} initial={1} />
           <br />
           <Button variant="primary">Agregar al Carrito</Button>
         </Card.Footer>

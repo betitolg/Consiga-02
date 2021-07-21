@@ -6,14 +6,14 @@ export default function ItemCount(props) {
   const AddProduct = () => {
     var integer = parseInt(count, 10);
 
-    if (integer < props.stock) {
-      moreCount(integer + 1);
+    if (count < props.stock) {
+      moreCount(count + 1);
     }
   };
   const RemoveProduct = () => {
     var integer = parseInt(count, 10);
-    if (integer !== 1) {
-      moreCount(integer - 1);
+    if (count !== 1) {
+      moreCount(count - 1);
     }
   };
 
