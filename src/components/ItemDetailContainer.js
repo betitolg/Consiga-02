@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, Button, Spinner } from "react-bootstrap";
 import ItemCount from "./ItemCount";
 
-export default function ItemDetail(props) {
+export default function ItemDetailContainer(props) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);

@@ -1,19 +1,20 @@
 import "./App.css";
-import ItemDetail from "./components/ItemDetail";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
-
 import NavBar from "./components/NavBar";
-import Products from "./components/Products";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 function App() {
   return (
+
+    <Router>
     <div className="container">
       <NavBar />
       <br />
       <ItemListContainer greetings="Daniel" />
-      <Products />
-      <br />
-      <ItemDetail />
+      <ItemDetailContainer />
     </div>
+    </Router>
   );
 }
 
