@@ -10,7 +10,7 @@ export default function ItemCount(props) {
     }
   };
   const RemoveProduct = () => {
-    if (count !== 1) {
+    if (count !== 0) {
       moreCount(count - 1);
     }
   };

@@ -39,10 +39,10 @@ export default function ItemDetailContainer() {
           <Card.Text>{items.description} </Card.Text>
 
           <div style={{ color: "red" }}> Precio: $ {items.price}</div>
-          <Button variant="primary">Comprar</Button>
+          <Button variant="primary">Terminar mi compra</Button>
         </Card.Body>
         <Card.Footer className="text-muted">
-          <ItemCount stock={items.stock} initial={1} />
+          <ItemCount stock={items.stock} initial={0} />
           <br />
           <Button variant="primary">Agregar al Carrito</Button>
         </Card.Footer>

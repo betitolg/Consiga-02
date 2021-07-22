@@ -12,7 +12,7 @@ export default function Item(props) {
         <Card.Title>{props.titulo}</Card.Title>
         <Card.Text>{props.descripcion}</Card.Text>
         <Card.Text>
-          <ItemCount stock={props.stock} initial={1} />
+          <ItemCount stock={props.stock} initial={0} />
         </Card.Text>
         <div style={{ color: "red" }}> Precio: $ {props.price}</div>
         <Button variant="primary">Agregar al Carrito</Button>
